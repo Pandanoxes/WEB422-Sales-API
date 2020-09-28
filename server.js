@@ -34,7 +34,7 @@ app.get("/api/sales", (req, res) => {
   myData
     .getAllSales(req.query.page, req.query.perPage)
     .then((data) => {
-      res.json({ sales: data });
+      res.json(data);
     })
     .catch(() => {
       res.json({ message: "Fail to get sales" });
@@ -45,7 +45,7 @@ app.get("/api/sales/:_id", (req, res) => {
   myData
     .getSaleById(req.params._id)
     .then((data) => {
-      res.json({ sale: data });
+      res.json(data);
     })
     .catch(() => {
       res.json({ message: "Fail to get sale." });
